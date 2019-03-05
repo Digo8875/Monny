@@ -1,0 +1,3 @@
+Nome usuário: reg_fin
+senha: reg_fin
+Nome do DB: reg_fin
