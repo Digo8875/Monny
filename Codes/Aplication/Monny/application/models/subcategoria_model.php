@@ -41,16 +41,21 @@ class Subcategoria_model extends CI_model{
     }
 
     public function set_subcategoria($data)
+	{
+		if(empty($data['Id']))
+			$this->db->insert('sub_categoria',$data);
+		else
 		{
-			if(empty($data['Id']))
-				$this->db->insert('sub_categoria',$data);
-			else
-			{
-				$this->db->where('Id', $data['Id']);
-				$this->db->update('sub_categoria', $data);
-			}
-			return true;
+			$this->db->where('Id', $data['Id']);
+			$this->db->update('sub_categoria', $data);
 		}
+		return true;
+	}
+
+	public function delete_subcategoria($id){
+		return $this->db->query("
+			UPDATE sub_categoria SET Ativo = 0 WHERE Id = ".$this->db->escape($id)."");
+	}
 
 }
 ?>

@@ -21,7 +21,7 @@ class Tipo_dinheiro_model extends CI_model{
 		$query =  $this->db->query("
 				SELECT * 
 					FROM tipo_dinheiro 
-				WHERE AND Id = ".$this->db->escape($id)."");
+				WHERE Id = ".$this->db->escape($id)."");
 
 		return $query->row_array();
 	}
@@ -36,16 +36,21 @@ class Tipo_dinheiro_model extends CI_model{
     }
 
     public function set_tipo_dinheiro($data)
+	{
+		if(empty($data['Id']))
+			$this->db->insert('tipo_dinheiro',$data);
+		else
 		{
-			if(empty($data['Id']))
-				$this->db->insert('tipo_dinheiro',$data);
-			else
-			{
-				$this->db->where('Id', $data['Id']);
-				$this->db->update('tipo_dinheiro', $data);
-			}
-			return true;
+			$this->db->where('Id', $data['Id']);
+			$this->db->update('tipo_dinheiro', $data);
 		}
+		return true;
+	}
+
+	public function delete_tipo_dinheiro($id){
+		return $this->db->query("
+			UPDATE tipo_dinheiro SET Ativo = 0 WHERE Id = ".$this->db->escape($id)."");
+	}
 
 }
 ?>

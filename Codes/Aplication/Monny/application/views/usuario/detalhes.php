@@ -2,7 +2,7 @@
 	<div class='col-lg-12'>
 		<div class='row'>
 			<div class='col-lg-6 table rounded titulo-tabela'>
-    			<h1>Detalhes da Subcategoria</h1>
+    			<h1>Detalhes do Usuário</h1>
     		</div>
     		<div class='col-lg-1 titulo-tabela'>
     			<?php
@@ -38,12 +38,6 @@
 						<td>Data de registro</td>
 						<?php
 						echo "<td>".$obj['Data_registro']."</td>";
-						?>
-					</tr>
-					<tr>
-						<td>Categoria</td>
-						<?php
-						echo "<td>".$obj['Nome_categoria']."</td>";
 						?>
 					</tr>
 				</tbody>

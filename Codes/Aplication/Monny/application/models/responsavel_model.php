@@ -36,16 +36,21 @@ class Responsavel_model extends CI_model{
     }
 
     public function set_responsavel($data)
+	{
+		if(empty($data['Id']))
+			$this->db->insert('responsavel',$data);
+		else
 		{
-			if(empty($data['Id']))
-				$this->db->insert('responsavel',$data);
-			else
-			{
-				$this->db->where('Id', $data['Id']);
-				$this->db->update('responsavel', $data);
-			}
-			return true;
+			$this->db->where('Id', $data['Id']);
+			$this->db->update('responsavel', $data);
 		}
+		return true;
+	}
+
+	public function delete_responsavel($id){
+		return $this->db->query("
+			UPDATE responsavel SET Ativo = 0 WHERE Id = ".$this->db->escape($id)."");
+	}
 
 }
 ?>

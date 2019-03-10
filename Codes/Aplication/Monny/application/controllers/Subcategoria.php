@@ -53,7 +53,7 @@ class Subcategoria extends CI_Controller{
 		$this->data['obj'] = $this->Subcategoria_model->get_subcategoria(0);
 
 		$this->load->view('templates/header', $this->data);
-		$this->load->view("subcategoria/create_edit", $this->data);
+		$this->load->view('subcategoria/create_edit', $this->data);
 		$this->load->view('templates/footer', $this->data);
 	}
 
@@ -73,6 +73,12 @@ class Subcategoria extends CI_Controller{
 		$this->load->view('templates/header', $this->data);
 		$this->load->view('subcategoria/detalhes', $this->data);
 		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function deletar($id){
+		$this->Subcategoria_model->delete_subcategoria($id);
+
+		redirect('subcategoria/index');
 	}
 
 	public function valida_subcategoria(){

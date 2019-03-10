@@ -73,7 +73,7 @@
 						</button>
 						<div class='dropdown-menu col-lg-12' aria-labelledby='dropdownMenuFuncionalidades'>
 					    	<a class='dropdown-item' href='#'>Registro Financeiro</a>
-					    	<a class='dropdown-item' href='#'>Carteiras</a>
+					    	<?php echo "<a class='dropdown-item' href='".base_url()."index.php/carteira/index'>Carteiras</a>";?>
 					    	<a class='dropdown-item' href='#'>Objetivos</a>
 					    	<a class='dropdown-item' href='#'>Dívidas</a>
 					    	<a class='dropdown-item' href='#'>Agendamentos</a>

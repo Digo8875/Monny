@@ -49,8 +49,32 @@ class Usuario extends CI_Controller{
 		$this->data['obj'] = $this->Usuario_model->get_usuario(0);
 
 		$this->load->view('templates/header', $this->data);
-		$this->load->view("usuario/create_edit", $this->data);
+		$this->load->view('usuario/create_edit', $this->data);
 		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function edit($id){
+		$this->data['title'] = 'Editar Usuario';
+		$this->data['obj'] = $this->Usuario_model->get_usuario($id);
+		
+		$this->load->view('templates/header', $this->data);
+		$this->load->view('usuario/create_edit', $this->data);
+		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function detalhes($id){	
+		$this->data['title'] = 'Detalhes do Usuario';
+		$this->data['obj'] = $this->Usuario_model->get_usuario($id);
+
+		$this->load->view('templates/header', $this->data);
+		$this->load->view('usuario/detalhes', $this->data);
+		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function deletar($id){
+		$this->Usuario_model->delete_usuario($id);
+
+		redirect('usuario/index');
 	}
 
 	public function valida_usuario(){

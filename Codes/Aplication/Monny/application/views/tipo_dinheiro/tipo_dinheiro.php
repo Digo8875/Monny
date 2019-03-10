@@ -35,7 +35,11 @@
 						echo '<td>'.$lista_tipo_dinheiros[$i]['Data_registro'].'</td>';
 						echo '<td>'.(($lista_tipo_dinheiros[$i]['Ativo'] == 1) ? 'Sim' : 'Não').'</td>';
 						echo '<td>'.$lista_tipo_dinheiros[$i]['Sigla'].'</td>';
-						echo '<td>ACT</td>';
+						echo "<td>";
+							echo "<a href='".base_url()."index.php/tipo_dinheiro/edit/".$lista_tipo_dinheiros[$i]['Id']."' title='Editar' style='cursor: pointer;' class='glyphicon glyphicon-edit text-dark'></a>  |  ";
+							echo "<a href='".base_url()."index.php/tipo_dinheiro/detalhes/".$lista_tipo_dinheiros[$i]['Id']."' title='Detalhes' style='cursor: pointer;' class='glyphicon glyphicon-th text-dark'></a>  |  ";
+							echo "<a href='".base_url()."index.php/tipo_dinheiro/deletar/".$lista_tipo_dinheiros[$i]['Id']."' title='Apagar' style='cursor: pointer;' class='glyphicon glyphicon-trash text-dark'></a>";
+						echo "</td>";
 					echo '</tr>';
 				}
 				?>

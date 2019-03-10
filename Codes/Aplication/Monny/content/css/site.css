@@ -44,6 +44,17 @@
 	background-color: white;
 }
 
+.texto-grande-esconder{ 
+  max-width: 100px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.texto-grande-esconder:hover {
+  overflow: visible;
+}
+
 .texto-logo{
 	text-align: center;
 	padding-bottom: 10px;

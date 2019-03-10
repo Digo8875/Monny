@@ -15,25 +15,32 @@
 
 		<div class='row'>
 			<table class='table table-striped rounded col-lg-12'>
-				</tr>
-				<tr>
-					<td>Nome</td>
-					<?php
-					echo "<td>".$obj['Nome']."</td>";
-					?>
-				</tr>
-				<tr>
-					<td>Ativo</td>
-					<?php
-					echo "<td>".(($obj['Ativo'] == 1) ? 'Sim' : 'Não')."</td>";
-					?>
-				</tr>
-				<tr>
-					<td>Data de registro</td>
-					<?php
-					echo "<td>".$obj['Data_registro']."</td>";
-					?>
-				</tr>
+				<thead class='rounded'>
+				    <tr>
+				      <th>Campo</th>
+				      <th>Valor</th>
+				  	</tr>
+				</thead>
+					<tbody>
+					<tr>
+						<td>Nome</td>
+						<?php
+						echo "<td>".$obj['Nome']."</td>";
+						?>
+					</tr>
+					<tr>
+						<td>Ativo</td>
+						<?php
+						echo "<td>".(($obj['Ativo'] == 1) ? 'Sim' : 'Não')."</td>";
+						?>
+					</tr>
+					<tr>
+						<td>Data de registro</td>
+						<?php
+						echo "<td>".$obj['Data_registro']."</td>";
+						?>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 	</div>

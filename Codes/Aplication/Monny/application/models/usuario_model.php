@@ -26,9 +26,6 @@ class Usuario_model extends CI_model{
 	}
 
 	public function get_usuarios(){
-        //$query = $this->db->get('categoria');
-        //return $query->result();
-
         $query = $this->db->query("
 					SELECT * 
 					FROM usuario ");
@@ -37,9 +34,6 @@ class Usuario_model extends CI_model{
     }
 
     public function get_usuarios_ativos(){
-        //$query = $this->db->get('categoria');
-        //return $query->result();
-
         $query = $this->db->query("
 					SELECT * 
 					FROM usuario 
@@ -58,6 +52,11 @@ class Usuario_model extends CI_model{
 			$this->db->update('usuario', $data);
 		}
 		return true;
+	}
+
+	public function delete_usuario($id){
+		return $this->db->query("
+			UPDATE usuario SET Ativo = 0 WHERE Id = ".$this->db->escape($id)."");
 	}
 
 }

@@ -38,7 +38,7 @@
 						echo "<td>";
 							echo "<a href='".base_url()."index.php/subcategoria/edit/".$lista_subcategorias[$i]['Id']."' title='Editar' style='cursor: pointer;' class='glyphicon glyphicon-edit text-dark'></a>  |  ";
 							echo "<a href='".base_url()."index.php/subcategoria/detalhes/".$lista_subcategorias[$i]['Id']."' title='Detalhes' style='cursor: pointer;' class='glyphicon glyphicon-th text-dark'></a>  |  ";
-							echo "<span onclick='' id='sp_lead_trash' name='sp_lead_trash' title='Apagar' style='cursor: pointer;' class='glyphicon glyphicon-trash text-dark'></span>";
+							echo "<a href='".base_url()."index.php/subcategoria/deletar/".$lista_subcategorias[$i]['Id']."' title='Apagar' style='cursor: pointer;' class='glyphicon glyphicon-trash text-dark'></a>";
 						echo "</td>";
 					echo '</tr>';
 				}

@@ -47,12 +47,36 @@ class Responsavel extends CI_Controller{
 
 	public function create(){
 
-		$this->data['title'] = 'Novo Tipo Dinheiro';
+		$this->data['title'] = 'Novo Responsável';
 		$this->data['obj'] = $this->Responsavel_model->get_responsavel(0);
 
 		$this->load->view('templates/header', $this->data);
-		$this->load->view("responsavel/create_edit", $this->data);
+		$this->load->view('responsavel/create_edit', $this->data);
 		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function edit($id){
+		$this->data['title'] = 'Editar Responsável';
+		$this->data['obj'] = $this->Responsavel_model->get_responsavel($id);
+		
+		$this->load->view('templates/header', $this->data);
+		$this->load->view('responsavel/create_edit', $this->data);
+		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function detalhes($id){	
+		$this->data['title'] = 'Detalhes do Responsável';
+		$this->data['obj'] = $this->Responsavel_model->get_responsavel($id);
+
+		$this->load->view('templates/header', $this->data);
+		$this->load->view('responsavel/detalhes', $this->data);
+		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function deletar($id){
+		$this->Responsavel_model->delete_responsavel($id);
+
+		redirect('responsavel/index');
 	}
 
 	public function valida_responsavel(){

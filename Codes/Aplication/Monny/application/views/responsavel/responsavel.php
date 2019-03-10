@@ -34,8 +34,12 @@
 						echo '<td>'.$lista_responsaveis[$i]['Nome'].'</td>';
 						echo '<td>'.$lista_responsaveis[$i]['Data_registro'].'</td>';
 						echo '<td>'.(($lista_responsaveis[$i]['Ativo'] == 1) ? 'Sim' : 'Não').'</td>';
-						echo '<td>'.$lista_responsaveis[$i]['Descricao'].'</td>';
-						echo '<td>ACT</td>';
+						echo '<td class="texto-grande-esconder">'.$lista_responsaveis[$i]['Descricao'].'</td>';
+						echo "<td>";
+							echo "<a href='".base_url()."index.php/responsavel/edit/".$lista_responsaveis[$i]['Id']."' title='Editar' style='cursor: pointer;' class='glyphicon glyphicon-edit text-dark'></a>  |  ";
+							echo "<a href='".base_url()."index.php/responsavel/detalhes/".$lista_responsaveis[$i]['Id']."' title='Detalhes' style='cursor: pointer;' class='glyphicon glyphicon-th text-dark'></a>  |  ";
+							echo "<a href='".base_url()."index.php/responsavel/deletar/".$lista_responsaveis[$i]['Id']."' title='Apagar' style='cursor: pointer;' class='glyphicon glyphicon-trash text-dark'></a>";
+						echo "</td>";
 					echo '</tr>';
 				}
 				?>

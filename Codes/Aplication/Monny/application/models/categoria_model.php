@@ -47,7 +47,7 @@ class Categoria_model extends CI_model{
 
 	public function delete_categoria($id){
 		return $this->db->query("
-			UPDATE Categoria SET Ativo = 0 WHERE Id = ".$this->db->escape($id)."");
+			UPDATE categoria SET Ativo = 0 WHERE Id = ".$this->db->escape($id)."");
 	}
 
 }

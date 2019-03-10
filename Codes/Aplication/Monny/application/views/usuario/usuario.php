@@ -33,7 +33,11 @@
 						echo '<td>'.$lista_usuarios[$i]['Nome'].'</td>';
 						echo '<td>'.$lista_usuarios[$i]['Data_registro'].'</td>';
 						echo '<td>'.(($lista_usuarios[$i]['Ativo'] == 1) ? 'Sim' : 'Não').'</td>';
-						echo '<td>ACT</td>';
+						echo "<td>";
+							echo "<a href='".base_url()."index.php/usuario/edit/".$lista_usuarios[$i]['Id']."' title='Editar' style='cursor: pointer;' class='glyphicon glyphicon-edit text-dark'></a>  |  ";
+							echo "<a href='".base_url()."index.php/usuario/detalhes/".$lista_usuarios[$i]['Id']."' title='Detalhes' style='cursor: pointer;' class='glyphicon glyphicon-th text-dark'></a>  |  ";
+							echo "<a href='".base_url()."index.php/usuario/deletar/".$lista_usuarios[$i]['Id']."' title='Apagar' style='cursor: pointer;' class='glyphicon glyphicon-trash text-dark'></a>";
+						echo "</td>";
 					echo '</tr>';
 				}
 				?>

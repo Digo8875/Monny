@@ -32,7 +32,7 @@ class Tipo_dinheiro extends CI_Controller{
 		$this->lista_tipo_dinheiros();
 	}
 
-	public function lista_tipo_dinheiros($page = 'Lista Tipo Dinheiros'){
+	public function lista_tipo_dinheiros($page = 'Lista de Moedas'){
 
         $this->data['title'] = ucfirst($page); // Capitalize the first letter
 
@@ -47,12 +47,36 @@ class Tipo_dinheiro extends CI_Controller{
 
 	public function create(){
 
-		$this->data['title'] = 'Novo Tipo Dinheiro';
+		$this->data['title'] = 'Nova Moeda';
 		$this->data['obj'] = $this->Tipo_dinheiro_model->get_tipo_dinheiro(0);
 
 		$this->load->view('templates/header', $this->data);
-		$this->load->view("tipo_dinheiro/create_edit", $this->data);
+		$this->load->view('tipo_dinheiro/create_edit', $this->data);
 		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function edit($id){
+		$this->data['title'] = 'Editar Moeda';
+		$this->data['obj'] = $this->Tipo_dinheiro_model->get_tipo_dinheiro($id);
+		
+		$this->load->view('templates/header', $this->data);
+		$this->load->view('tipo_dinheiro/create_edit', $this->data);
+		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function detalhes($id){	
+		$this->data['title'] = 'Detalhes da Moeda';
+		$this->data['obj'] = $this->Tipo_dinheiro_model->get_tipo_dinheiro($id);
+
+		$this->load->view('templates/header', $this->data);
+		$this->load->view('tipo_dinheiro/detalhes', $this->data);
+		$this->load->view('templates/footer', $this->data);
+	}
+
+	public function deletar($id){
+		$this->Tipo_dinheiro_model->delete_tipo_dinheiro($id);
+
+		redirect('tipo_dinheiro/index');
 	}
 
 	public function valida_tipo_dinheiro(){
@@ -61,7 +85,7 @@ class Tipo_dinheiro extends CI_Controller{
 
 	public function formCreateEdit(){
 
-		$this->data['title'] = 'Criar/Atualizar Tipo Dinheiro';
+		$this->data['title'] = 'Criar/Atualizar Moeda';
 
 		$dataToSave = array(
 			'Id' => $this->input->post('id'),

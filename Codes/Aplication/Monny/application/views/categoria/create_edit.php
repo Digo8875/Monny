@@ -28,7 +28,7 @@
 						<div class='checkbox checbox-switch switch-success custom-controls-stacked'>
 							<?php
 								$checked = "";
-								if($obj['Ativo'] == 1)
+								if($obj['Ativo'] == 1 or !(isset($obj['Id'])))
 									$checked = "checked";
 								
 								echo"<label for='ativo' >";
