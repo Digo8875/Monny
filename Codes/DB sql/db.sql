@@ -75,7 +75,6 @@ CREATE TABLE Objetivo (
 	Ativo BOOLEAN DEFAULT TRUE,
 	Tipo TINYINT(1) NOT NULL,
 	Valor DOUBLE(12,2) NOT NULL,
-	Usuario_id INT NOT NULL,
 	Carteira_id INT NOT NULL,
 	Tipo_dinheiro_id INT NOT NULL,
     CONSTRAINT FK_CARTEIRA_OBJETIVO 
@@ -207,11 +206,11 @@ INSERT INTO usuario (Nome)
 INSERT INTO usuario (Nome) 
         VALUES('Teste User Nome Grande Extenso Gigante');
 INSERT INTO usuario (Nome) 
-        VALUES('Teste 3');
-INSERT INTO usuario (Nome) 
-        VALUES('Teste 4');
-INSERT INTO usuario (Nome) 
         VALUES('Teste 5');
+INSERT INTO usuario (Nome) 
+        VALUES('Teste 6');
+INSERT INTO usuario (Nome) 
+        VALUES('Teste 7');
 
 /*ABAIXO INSERE O USUÁRIO ATUAL DO SISTEMA*/
 INSERT INTO usuario_atual (Id, Usuario_id) 
